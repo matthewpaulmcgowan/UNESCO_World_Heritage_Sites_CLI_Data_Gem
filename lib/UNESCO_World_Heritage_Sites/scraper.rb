@@ -5,9 +5,10 @@ class UNESCOWorldHeritageSites::Scraper
       name=country.text
       url="http://whc.unesco.org#{country.attr("href")}"
       index=i+1
-      UNESCOWorldHeritageSites::Countries.new_from_index(index,name,url)
+      UNESCOWorldHeritageSites::Countries.create_from_index(index,name,url)
                          end
-  end 
+  end
+  
 end
 
 #doc.css("#acc>h4>a").attr("href").value

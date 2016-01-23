@@ -1,5 +1,5 @@
 class UNESCOWorldHeritageSites::Sites
-  attr_accessor :id,:country, :name, :url
+  attr_accessor :id,:country, :name, :url, :doc
   
   @@all=[]
   
@@ -14,34 +14,42 @@ class UNESCOWorldHeritageSites::Sites
     @@all << self 
   end
   
-  def self.new_from_country(id,country,name,url)
+  def self.create_from_country(id,country,name,url)
     new_site=UNESCOWorldHeritageSites::Sites.new(id,country,name,url)
     new_site.save
     new_site
   end
   
   def self.print_all_sites
-      puts @@all.length
     @@all.each do |site|
       puts "#{site.id}, #{site.name}"
                 end
   end
   
   def self.find_site(input_id)
-    @@all.each do |site|
-      if site.id==input_id.to_i
-        return site
-      end
+    @@all.detect do |site|
+      site.id==input_id.to_i
                 end
   end 
   
+  def scrape_sites
+    @doc=Nokogiri::HTML(open(url)) 
+  end
+  
   def print_site_data
-    doc=Nokogiri::HTML(open(url))
-    overview=doc.css("#contentdes_en>p").text
+    scrape_sites
+    overview=@doc.css("#contentdes_en>p").text
     puts self.name
     puts self.country
     puts overview
     puts self.url
   end
   
+  def self.number_of_sites
+    @@all.length
+  end
+  
+  def self.clear
+    @@all=[]
+  end
 end
