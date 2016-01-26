@@ -39,7 +39,7 @@ class UNESCOWorldHeritageSites::CLI
     @site.print_site_data
     puts ""
     puts "Would you like to add this site to your favorites?"
-    puts "Please enter 1 for yes or two for no."
+    puts "Please enter 1 for yes or 2 for no."
     @input=gets.strip
     response_checker(2)
     add_to_favorites
