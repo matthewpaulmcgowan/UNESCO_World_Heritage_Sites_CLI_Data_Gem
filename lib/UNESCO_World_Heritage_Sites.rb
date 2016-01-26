@@ -7,5 +7,6 @@ require_relative "./UNESCO_World_Heritage_Sites/cli"
 require_relative "./UNESCO_World_Heritage_Sites/scraper"
 require_relative "./UNESCO_World_Heritage_Sites/countries"
 require_relative "./UNESCO_World_Heritage_Sites/sites"
+require_relative "./UNESCO_World_Heritage_Sites/user_favorites"
 module UNESCOWorldHeritageSites
 end

@@ -22,7 +22,7 @@ class UNESCOWorldHeritageSites::Sites
   
   def self.print_all_sites
     @@all.each do |site|
-      puts "#{site.id}, #{site.name}"
+      puts "#{site.id}. #{site.name}"
                 end
   end
   

@@ -6,16 +6,16 @@ require 'UNESCO_World_Heritage_Sites/version'
 Gem::Specification.new do |spec|
   spec.name          = "UNESCO_World_Heritage_Sites"
   spec.version       = UNESCOWorldHeritageSites::VERSION
-  spec.authors       = ["matthewpaulmcgowan"]
+  spec.authors       = ["Matthew McGowan"]
   spec.email         = ["matthewpaulmcgowan@gmail.com"]
 
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   end
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A CLI to search through UNESCO World Heritage Sites}
+  spec.description   = %q{Scrapes many pages throughout the whc.unesco.org website, organizes sites by country and allows the user to select which site they would like to learn more about.}
+  spec.homepage      = "https://github.com/matthewpaulmcgowan/UNESCO_World_Heritage_Sites_CLI_Data_Gem"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

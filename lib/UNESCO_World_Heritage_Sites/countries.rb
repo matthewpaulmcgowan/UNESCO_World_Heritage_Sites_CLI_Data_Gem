@@ -34,7 +34,7 @@ class UNESCOWorldHeritageSites::Countries
       @sites << [name,url]
                             end
                              end
-    create_sites   
+    create_sites   #not sure if I should call the create_sites method here or to call it alone in the CLI method
   end
   
   def create_sites
@@ -49,20 +49,22 @@ class UNESCOWorldHeritageSites::Countries
   end
   
   def self.find_country(id)
-    @@all.each do |country|
-      if country.id==id.to_i
-       return country
-      end
+    @@all.detect do |country|
+      country.id==id.to_i
                 end
   end
   
   def self.print_countries
     @@all.each do |country|
-        puts "#{country.id}, #{country.name}"
+        puts "#{country.id}. #{country.name}"
             end
   end
   
   def self.number_of_countries
     @@all.length
+  end
+  
+  def self.clear
+    @@all=[]
   end
 end
