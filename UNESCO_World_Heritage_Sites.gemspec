@@ -9,10 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Matthew McGowan"]
   spec.email         = ["matthewpaulmcgowan@gmail.com"]
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
-
   spec.summary       = %q{A CLI to search through UNESCO World Heritage Sites}
   spec.description   = %q{Scrapes many pages throughout the whc.unesco.org website, organizes sites by country and allows the user to select which site they would like to learn more about.}
   spec.homepage      = "https://github.com/matthewpaulmcgowan/UNESCO_World_Heritage_Sites_CLI_Data_Gem"
